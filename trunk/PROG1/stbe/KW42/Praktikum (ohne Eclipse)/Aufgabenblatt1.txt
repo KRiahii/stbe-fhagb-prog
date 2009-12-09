@@ -1,0 +1,58 @@
+/* Praktikum KW 42
+ * Übungsblatt 1
+ *
+ * Aufgabe 1 (Präsenzaufgabe)
+ * 
+ * "Entwickeln" Sie eine HelloWorld-Applikation
+ *
+ * d) Legen Sie nun in Ihrem Verzeichnis für die Aufgabe 1 
+ *    Unterverzeichnisse mit Namen src und bin an.
+ *    Verschieben Sie den Quellcode Ihres Programms 
+ *    in das src-Verzeichnis.
+ *    Rufen Sie den Compiler mit einer entsprechenden Option so auf, 
+ *    dass der Byte-Code im bin-Verzeichnis landet.
+ *    Starten Sie den Interpreter erneut. 
+ *    In welchem Verzeichnis funktioniert der Programmaufruf? 
+ *
+ */
+
+Compiler ausführen mit der Zusatzoption -d <Pfad>
+z.B: javac -d ..\bin HelloWorld.java //Speicher das class-File im nebenliegenden Verzeichnis bin
+
+Interpreter aus src-Verzeichnis
+java ..\bin\HelloWorld
+
+liefert Fehler:
+Exception in thread "main" java.lang.NoClassDefFoundError: //\bin\HelloName/class
+Caused by: java.lang.ClassNotFoundException: ..\bin\HelloName.class
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:200)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:307)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:252)
+        at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:320)
+Could not find the main class: ..\bin\HelloName.class.  Program will exit.
+
+/* Praktikum KW 42
+ * Übungsblatt 1
+ *
+ * Aufgabe 1 (Präsenzaufgabe)
+ *  
+ * "Entwickeln" Sie eine HelloWorld-Applikation
+ *
+ * d) Was müssen Sie tun, damit Sie das Programm 
+ *    in jedem beliebigen Verzeichnis ausführen können?
+ *
+ */
+
+Eintrag des bin-Verzeichnis in die CLASSPATH-Variable
+
+temporär (gilt nur für die aktuelle DOS-Box)
+
+set classpath=<Pfad>
+
+permanent (gilt für jede DOS-Box)
+
+CLASSPATH-Variable in den Umgebungsvariablen eintragen
+Persönlich (nur für aktuellen Nutzer) oder Global (für alle Benutzer am Rechner)
