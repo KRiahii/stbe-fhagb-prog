@@ -1,3 +1,5 @@
+// Deine Mudda kocht Salat :-)
+
 /* Praktikum KW 42
  * Übungsblatt 1
  *
