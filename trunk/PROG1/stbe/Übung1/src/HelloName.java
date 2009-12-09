@@ -1,5 +1,3 @@
-//abgefuckter shice
-
 /* Praktikum KW 42
  * Übungsblatt 1
  *
