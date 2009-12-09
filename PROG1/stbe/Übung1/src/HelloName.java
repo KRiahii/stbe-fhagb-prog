@@ -1,4 +1,3 @@
-// change rev 16 simultan
 /* Praktikum KW 42
  * Übungsblatt 1
  *
@@ -17,7 +16,8 @@ public class HelloName
 	{
 		System.out.println("Hello Stefan!");
 	}
+
 }
 
-//blablablub
-// jetzt aber!
+}
+
