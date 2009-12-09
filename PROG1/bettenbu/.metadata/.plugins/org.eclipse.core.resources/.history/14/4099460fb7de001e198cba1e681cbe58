@@ -1,0 +1,27 @@
+
+public class e {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	int poss_prime = 120;
+	int[] Liste = primeList(poss_prime);	
+	}
+	
+	
+
+	public static int[] primeList(int totest){
+		int[] primeList = new int[totest+1];
+		int marker = 2;
+		while ((marker*marker) < totest){
+				for (int i = marker*marker; i < totest; i+=marker){
+					primeList[i] = -1;
+				}
+			marker++;	
+			}
+	return primeList;
+	}
+}
