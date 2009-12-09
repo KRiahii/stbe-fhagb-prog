@@ -1,5 +1,3 @@
-package Praktikum;
-
 import java.io.IOException;
 /* Praktikum KW 44
  * Übungsblatt 3

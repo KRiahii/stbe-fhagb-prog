@@ -1,4 +1,3 @@
-package Praktikum;
 /* Praktikum KW 44
  * Übungsblatt 3
  *
