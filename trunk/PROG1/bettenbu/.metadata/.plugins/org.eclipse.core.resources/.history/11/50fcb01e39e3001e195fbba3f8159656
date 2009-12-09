@@ -1,0 +1,22 @@
+public class CarTest  {  
+    public static void main(String[] args) { 
+        //car constructor maxspeed, fueltankcap
+    	Car car = new Car(200, 100);  
+        car.setMotorOn();
+        car.setSpeed(100);
+        Traffic traffic = new Traffic(car);
+        traffic.setSize(1000, 200);
+        traffic.setVisible(true);  
+     
+        // start animation
+        traffic.start();
+        
+        // put your code for car state manipulation here
+        Traffic.waitAWhile(7000);
+        car.tanken(30);
+        
+        
+        
+        
+    } 
+}
