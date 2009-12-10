@@ -14,6 +14,7 @@ public class CarTest  {
         
         // put your code for car state manipulation here
         
+//		  nur ein test
 //        car.setMotorOn();
 //        car.setSpeed(200);
 //        Traffic.waitAWhile(5000);        
