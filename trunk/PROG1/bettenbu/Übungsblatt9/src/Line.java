@@ -2,26 +2,32 @@
 public class Line {
 	public Line nextline;	
 	public Line prevline;
-	private String lineText;
+	// gleich einen stringbuffer erstellen, dann wirds für alle methoden leichter
+	private StringBuffer lineText;
 
 	
 	
 	public Line(String input){
-		lineText = input;
+		lineText = new StringBuffer(input);
 	}
 
 
 
 
 	public String getLineText() {
-		return lineText;
+		return lineText.toString();
 	}
 
 
 
 
-	public void setLineText(String lineText) {
-		this.lineText = lineText;
+	public void setLineText(String input) {
+		lineText = new StringBuffer(input);
+	}
+	
+	//Zeichen an bestimmter Position löschen, aufgerufen durch Text Klasse
+	public void deleteCharAtPos(int x){
+		lineText.deleteCharAt(x);		
 	}
 
 }
