@@ -1,3 +1,5 @@
+import java.util.concurrent.CountDownLatch;
+
 
 public class Text {
 	public Line firstLine;
@@ -135,6 +137,29 @@ public class Text {
 		}
 	}
 	
+	/**
+	 * Löscht das Zeichen an der Stelle an der sich der Cursor befindet
+	 */
+	public void deleteCharAtCursor(){
+		cursor.yPos.deleteCharAtPos(cursor.xPos);
+	}
+	
+	/**
+	 * 
+	 * @param args
+	 */
+	public void replaceCharAtCursor(char replaceChar){
+		cursor.yPos.replaceCharAtPos(cursor.xPos, replaceChar);
+	}
+	
+	public void insertAtCursor(char insertChar){
+		cursor.yPos.insertAtPos(cursor.xPos, insertChar);
+	}
+	
+	public void insertAtCursor(String insertString){
+		cursor.yPos.insertAtPos(cursor.xPos, insertString);
+	}
+	
 	public static void main(String args[]){
 		Text myText = new Text();
 		
@@ -143,8 +168,20 @@ public class Text {
 		myText.addLine("Test3");
 		myText.addLine("Test4");
 		
-		String text = myText.getWholeText();
+//		String text = myText.getWholeText();
+//		System.out.println(text);
 		
-		System.out.println(text);
+		myText.moveCursorDown();
+		myText.moveCursorToChar(3);
+		
+		System.out.println(myText.getLineAtCursor());
+		
+		myText.deleteCharAtCursor();
+		
+		myText.moveCursorLeft();
+		
+		myText.replaceCharAtCursor('A');
+		
+		System.out.println(myText.getLineAtCursor());
 	}
 }
