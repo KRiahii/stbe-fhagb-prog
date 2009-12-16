@@ -16,9 +16,11 @@ public class Austestklasse {
 		
 		//Rückgabe der Zeile unter dem Cursor als String
 		testtext.moveCursorDown();
-		testtext.moveCursorDown();
-		testtext.moveCursorUp();
-		System.out.println(testtext.getLineAtCursorPosition());
+		//System.out.println(testtext.getLineAtCursorPosition());
+		
+		//Löschen des Zeichens unter dem Cursor. 
+		testtext.deleteCharAtCursor();
+		System.out.println(testtext.getWholeText());
 
 	}
 

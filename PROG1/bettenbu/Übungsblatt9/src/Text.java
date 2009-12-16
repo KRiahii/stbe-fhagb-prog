@@ -66,8 +66,11 @@ public class Text {
 	
 	//Rückgabe der Zeile unter dem Cursor als String
 	public String getLineAtCursorPosition(){
-		return cursor.yPos.getLineText();
-		
+		return cursor.yPos.getLineText();		
+	}
+	//Löschen des Zeichens unter dem Cursor. 
+	public void deleteCharAtCursor(){
+		cursor.yPos.deleteCharAtPos(cursor.xPos);
 	}
 
 }
