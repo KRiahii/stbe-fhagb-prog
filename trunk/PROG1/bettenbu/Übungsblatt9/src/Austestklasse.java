@@ -6,6 +6,7 @@ public class Austestklasse {
 	 */
 	public static void main(String[] args) {
 		
+		//testkommentar
 		Text testtext = new Text();
 		testtext.AddLineAtLastLine("Hallo Welt1");
 		testtext.AddLineAtLastLine("Hallo Welt2");
