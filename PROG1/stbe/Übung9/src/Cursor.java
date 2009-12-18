@@ -1,19 +1,19 @@
 
 class Cursor {
-	Line yPos;
+	LinkListElement yPos;
 	int xPos;
 	
-	public Cursor(Line yPos){
+	public Cursor(LinkListElement yPos){
 		this(yPos, 0);
 	}
 	
-	public Cursor(Line yPos, int xPos){
+	public Cursor(LinkListElement yPos, int xPos){
 		this.yPos = yPos; // Was tun wenn in Dummys???
-		if(xPos >= 0 && xPos < yPos.getLineText().length()){
+		if(xPos >= 0 && xPos < yPos.data.getLineText().length()){
 			this.xPos = xPos;
 		}
-		else if(xPos >= yPos.getLineText().length()) {
-			this.xPos = yPos.getLineText().length() - 1;
+		else if(xPos >= yPos.data.getLineText().length()) {
+			this.xPos = yPos.data.getLineText().length() - 1;
 		}
 		else if(xPos < 0){
 			this.xPos = 0;

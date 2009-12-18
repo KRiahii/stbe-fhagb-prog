@@ -1,7 +1,4 @@
-
 class Line {
-	Line prevLine;
-	Line nextLine;
 	private StringBuffer lineText;
 
 	public Line(){}
@@ -9,13 +6,7 @@ class Line {
 	public Line(String lineText){
 		this.lineText = new StringBuffer(lineText);
 	}
-	
-	public Line(String lineText, Line nextLine, Line prevLine){
-		this(lineText);
-		this.nextLine = nextLine;
-		this.prevLine = prevLine;	
-	}
-	
+
 	public String getLineText() {
 		return lineText.toString();
 	}
