@@ -36,7 +36,7 @@ public class Text {
 		firstline.nextline = lastline;		
 		lastline.prevline = firstline;
 		lastline.nextline = null;
-		cursor = new Cursor(0, firstline);
+		cursor = new Cursor(4, firstline);
 	}
 	
 	//Cursor eine Zeile nach unten bewegen
@@ -50,7 +50,26 @@ public class Text {
 		cursor.yPos = cursor.yPos.prevline;
 	}
 	
+	//Cursor nach rechts bewegen
+	public void moveCursorRight(){
+		if (cursor.xPos < cursor.yPos.getLineText().length()-1)
+			cursor.xPos += 1;
+		else{
+			cursor.xPos = 0;
+			cursor.yPos = cursor.yPos.nextline;
+		}
+			
+	}
 	
+	//Cursor nach links bewegen
+	public void moveCursorLeft(){
+		if (cursor.xPos > 0)
+			cursor.xPos -= 1;
+		else{
+			cursor.xPos = cursor.yPos.prevline.getLineText().length()-1;
+			cursor.yPos = cursor.yPos.prevline;
+		}
+	}
 	
 	
 	// Rückgabe des gesamten Textes als String (bei größeren Texten evtl. beschränken auf eine bestimmte Zeilenzahl). 
@@ -72,5 +91,39 @@ public class Text {
 	public void deleteCharAtCursor(){
 		cursor.yPos.deleteCharAtPos(cursor.xPos);
 	}
+	
+	//Ersetzen des Zeichens unter dem Cursor durch ein neues Zeichen (spezifiziert als Übergabeparameter). 
+	public void replaceCharAtCursor(char newChar){
+		cursor.yPos.replaceCharAtPos(cursor.xPos, newChar);
+	}
 
+	//Einfügen eines Zeichens (Übergabeparameter) bzw. einer Zeichenfolge an der aktuellen Cursor-Position. 
+	public void insertStringAtCursor(String insertString){
+		cursor.yPos.insertStringAtPos(cursor.xPos, insertString);
+	}
+	
+	//Erfragen der Zeilennummer, bzw. der exakten Position des Cursors. 
+	// Zeilennummer
+	public int returnCursorYpos(){
+		int i = 1;
+		Line templine = new Line("");
+		templine = firstline.nextline;
+		while(templine != cursor.yPos){
+			i++;
+			templine = templine.nextline;
+		}		
+		return i;
+	}
+	//Erfragen der Zeilennummer, bzw. der exakten Position des Cursors. 
+	// xPos
+	public int returnCursorXpos(){
+		return cursor.xPos;
+	}
+	// hier gehts weiter, bild zeichnen!
+	//Löschen der gesamten Zeile unter dem Cursor.
+	public void deleteLineAtCursour(){
+		cursor.yPos.nextline = cursor.yPos.nextline.nextline;
+		cursor.yPos.prevline = 
+	}
+	
 }
