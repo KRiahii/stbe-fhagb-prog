@@ -30,4 +30,15 @@ public class Line {
 		lineText.deleteCharAt(x);		
 	}
 
+
+	//Ersetzen des Zeichens unter dem Cursor durch ein neues Zeichen (spezifiziert als Übergabeparameter). 
+	public void replaceCharAtPos(int x, char y){
+		lineText.setCharAt(x, y);
+	}
+	//Einfügen eines Zeichens (Übergabeparameter) bzw. einer Zeichenfolge an der aktuellen Cursor-Position. 
+	public void insertStringAtPos(int x, String insertString){
+		lineText.insert(x, insertString);
+	}
+	
+	
 }
