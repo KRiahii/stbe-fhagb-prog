@@ -213,7 +213,7 @@ public class Text {
 	 * Einfügen einer neuen Zeile vor dem Cursor
 	 * @param input Text für die neue Zeile
 	 */
-	public void addLineBevoreCursor(String input){
+	public void addLineInFrontOfCursor(String input){
 		LinkListElement tempLine = cursor.yPos.prev;
 		LinkListElement newLine = new LinkListElement(input, cursor.yPos, tempLine);
 		tempLine.next = newLine;
