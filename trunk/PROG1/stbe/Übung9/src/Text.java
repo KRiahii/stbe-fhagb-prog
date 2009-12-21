@@ -2,11 +2,7 @@ public class Text {
 	public LinkListElement firstLine;
 	public LinkListElement lastLine;
 	private Cursor cursor;
-	
-	public Cursor getCursor() {
-		return cursor;
-	}
-	
+
 	/**
 	 * Standardkonstruktor für Test
 	 * Erstellt ein Dummyobjekt für Start und Ende
@@ -167,6 +163,10 @@ public class Text {
 		cursor.yPos.data.insertAtPos(cursor.xPos, insertString);
 	}
 	
+	/**
+	 * Ermittelt die Zeile in der Cursor sich befindet
+	 * @return Zeilennummer in der sich der Cursor befindet
+	 */
 	public int getCursorLine(){
 		int counter = 1;
 		LinkListElement aktElement = firstLine.next;
@@ -178,6 +178,10 @@ public class Text {
 		return counter;
 	}
 	
+	/**
+	 * Gibt das Zeichen an dem sich der Cursor sich befindet zurück
+	 * @return Nummer des Zeichens an dem sich der Cursor befindet
+	 */
 	public int getCursorXPos(){
 		return cursor.xPos;
 	}
@@ -216,6 +220,30 @@ public class Text {
 		cursor.yPos.prev = newLine;
 	}
 	
+	/**
+	 * Gibt die Anzahl der Zeichen an die die Zeile enthält in der sich der Cursor befindet
+	 * @return
+	 */
+	public int getLineLengthAtCursor(){
+		return cursor.yPos.data.getLineText().length();
+	}
+	
+	/**
+	 * Gibt die Länge des gesamten Textes zurück
+	 * @return Anzahl der Zeichen die der Text enthält
+	 */
+	public int getWholeTextLength(){
+		LinkListElement aktElement = firstLine.next;
+		int length = 0;
+		
+		while(aktElement.next != null){
+			length += aktElement.data.getLineText().length();
+			aktElement = aktElement.next;
+		}
+		
+		return length;
+	}
+	
 	public static void main(String args[]){
 		Text myText = new Text();
 		
@@ -230,13 +258,20 @@ public class Text {
 		myText.moveCursorDown();
 		myText.moveCursorDown();
 		
-		myText.addLineBevoreCursor("Test123");
-		myText.addLineAfterCursor("Test1343");
-		
-		System.out.println();
-		System.out.println();
-		
-		text = myText.getWholeText();
-		System.out.println(text);
+		System.out.println(myText.getLineAtCursor());
+		System.out.println(myText.getLineLengthAtCursor());
+		System.out.println(myText.getWholeTextLength());
+	}
+}
+
+class LinkListElement {
+	LinkListElement prev;
+	Line data;
+	LinkListElement next;
+	
+	public LinkListElement(String lineText, LinkListElement next, LinkListElement prev){
+		this.next = next;
+		this.prev = prev;
+		this.data = new Line(lineText);
 	}
 }
