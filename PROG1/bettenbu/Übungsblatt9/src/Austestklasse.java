@@ -29,19 +29,40 @@ public class Austestklasse {
 //		testtext.moveCursorRight();
 //		testtext.moveCursorLeft();
 //		testtext.deleteCharAtCursor();
-//		System.out.println(testtext.getWholeText());
+		System.out.println(testtext.getWholeText());
 
-	//Ersetzen des Zeichens unter dem Cursor durch ein neues Zeichen (spezifiziert als Übergabeparameter). 
-		testtext.replaceCharAtCursor('ö');
-		testtext.moveCursorRight();
-		testtext.insertStringAtCursor("chen");
-		System.out.println(testtext.getWholeText());
-		testtext.moveCursorDown();
-		System.out.println("Der Cursor befindet sich in Zeile: " + testtext.returnCursorYpos());
-		System.out.println("Der Cursor befindet sich in Spalte: " + testtext.returnCursorXpos());
-		System.out.println("Lösche dieses Zeichen jetzt");
-		testtext.deleteCharAtCursor();
-		System.out.println(testtext.getWholeText());
+//		Ersetzen des Zeichens unter dem Cursor durch ein neues Zeichen (spezifiziert als Übergabeparameter). 
+//		testtext.replaceCharAtCursor('ö');
+//		testtext.moveCursorRight();
+//		testtext.insertStringAtCursor("chen");
+//		System.out.println(testtext.getWholeText());
+//		testtext.moveCursorDown();
+//		System.out.println("Der Cursor befindet sich in Zeile: " + testtext.returnCursorYpos());
+//		System.out.println("Der Cursor befindet sich in Spalte: " + testtext.returnCursorXpos());
+//		System.out.println("Lösche dieses Zeichen jetzt");
+//		testtext.deleteCharAtCursor();
+//		System.out.println(testtext.getWholeText());
+//		testtext.moveCursorDown();
+//		testtext.deleteLineAtCursour();
+//		System.out.println(testtext.getWholeText());
+//		testtext.deleteLineAtCursour();
+//		System.out.println(testtext.getWholeText());
+//		Einfügen einer neuen Zeile (mit spezifiziertem Inhalt) vor dem Cursor.
+//		testtext.insertLineInFrontOfCursor("Das hier soll eingefuegt werden");
+//		System.out.println(testtext.getWholeText());
+//		System.out.println("Der Cursor befindet sich in Zeile: " + testtext.returnCursorYpos());
+//		System.out.println("Der Cursor befindet sich in Spalte: " + testtext.returnCursorXpos());
+//		testtext.insertLineInFrontOfCursor("Das hier soll auch eingefuegt werden");
+//		System.out.println(testtext.getWholeText());
+//		System.out.println("Der Cursor befindet sich in Zeile: " + testtext.returnCursorYpos());
+//		System.out.println("Der Cursor befindet sich in Spalte: " + testtext.returnCursorXpos());
+//		//Erfragen der Länge der Zeile, auf der der Cursor steht (Zahl der Zeichen!). 
+//		testtext.moveCursorUp();
+//		System.out.println("Die Zeile unter dem Cursor ist " + testtext.getLengthOfLineAtCursor() + " Zeichen lang");
+		System.out.println("Gesamtlaenge des Texts " + testtext.getLengthOfWholeText() + " Zeichen");
 	}
+	
+	 
+	
 
 }

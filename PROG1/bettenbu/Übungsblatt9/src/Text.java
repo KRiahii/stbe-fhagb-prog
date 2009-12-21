@@ -119,11 +119,46 @@ public class Text {
 	public int returnCursorXpos(){
 		return cursor.xPos;
 	}
-	// hier gehts weiter, bild zeichnen!
+	
+	
 	//Löschen der gesamten Zeile unter dem Cursor.
 	public void deleteLineAtCursour(){
-		cursor.yPos.nextline = cursor.yPos.nextline.nextline;
-		cursor.yPos.prevline = 
+		//cursor ypos sichern in templine
+		Line templine = new Line("");
+		templine = cursor.yPos;
+		//cursor auf zeile nach der gelöschten setzen
+		cursor.yPos = cursor.yPos.nextline;
+		//vorgänger setzen
+		cursor.yPos.prevline = templine.prevline;
+		//nachfolger setzen
+		templine.prevline.nextline = cursor.yPos;
+		
 	}
 	
+	//Einfügen einer neuen Zeile (mit spezifiziertem Inhalt) vor dem Cursor. 
+	public void insertLineInFrontOfCursor(String insertString){
+		Line insertLine = new Line(insertString);
+		//Vorgänger des Cursors adressieren, dessen nextline auf insertline setzen
+		cursor.yPos.prevline.nextline = insertLine;
+		// Vorgänger der insertLine = Vorgänger des Cursors setzen 
+		insertLine.prevline = cursor.yPos.prevline;
+		// Vorgänger des Cursors = insertLine
+		cursor.yPos.prevline = insertLine;
+		insertLine.nextline = cursor.yPos;		
+	}
+	//Erfragen der Länge der Zeile, auf der der Cursor steht (Zahl der Zeichen!). 
+	public int getLengthOfLineAtCursor(){
+		return cursor.yPos.getLineText().length();		
+	}
+	//Erfragen der Länge des gesamten Texts
+	public int getLengthOfWholeText(){
+		Line templine = new Line("");
+		templine = firstline.nextline;
+		int length = 0;
+		while (templine.nextline != null){
+			length += templine.getLineText().length();
+			templine = templine.nextline;
+		}
+		return length;
+	}
 }
