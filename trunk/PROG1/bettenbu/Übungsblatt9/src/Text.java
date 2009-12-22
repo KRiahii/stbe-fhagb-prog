@@ -27,6 +27,11 @@ public class Text {
 		newline.nextline = lastline;
 		// vorgäner der lastline wird die newline
 		lastline.prevline = newline;
+		
+		//Cursor in erste Zeile setzen, falls Vorgänger firstline ist
+		if (newline.prevline == firstline)
+			cursor.yPos = newline;
+			
 	}
 	public Text(){
 		firstline = new Line("");
@@ -36,7 +41,7 @@ public class Text {
 		firstline.nextline = lastline;		
 		lastline.prevline = firstline;
 		lastline.nextline = null;
-		cursor = new Cursor(4, firstline);
+		cursor = new Cursor(0, firstline);
 	}
 	
 	//Cursor eine Zeile nach unten bewegen
