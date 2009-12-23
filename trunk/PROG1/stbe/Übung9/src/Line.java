@@ -1,12 +1,24 @@
+
 class Line {
 	private StringBuffer lineText;
 
+	/**
+	 * Standardkonstruktor
+	 */
 	public Line(){}
 	
+	/**
+	 * Konstruktor erstellt Zeile mit übergebenem Text
+	 * @param lineText Text für die Zeile
+	 */
 	public Line(String lineText){
 		this.lineText = new StringBuffer(lineText);
 	}
 
+	/**
+	 * Gibt den aktuellen Text der Zeile zurück
+	 * @return Text der Zeile
+	 */
 	public String getLineText() {
 		return lineText.toString();
 	}
