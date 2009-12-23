@@ -1,3 +1,4 @@
+
 public class Text {
 	public LinkListElement firstLine;
 	public LinkListElement lastLine;
@@ -98,6 +99,9 @@ public class Text {
 		LinkListElement newLine = new LinkListElement(input,this.lastLine, tempLine);
 		this.lastLine.prev = newLine;
 		tempLine.next = newLine;
+		if(cursor.yPos.prev == null){
+			moveCursorDown();
+		}
 	}
 	
 	/**
@@ -202,11 +206,15 @@ public class Text {
 	 * Fügt eine Zeile in der Zeile nach dem Coursor an
 	 * @param input Text für die neue Zeile
 	 */
+	
 	public void addLineAfterCursor(String input){
 		LinkListElement tempLine = cursor.yPos.next;
 		LinkListElement newLine = new LinkListElement(input, tempLine, cursor.yPos);
 		cursor.yPos.next = newLine;
 		tempLine.prev = newLine;
+		if(cursor.yPos.prev == null){
+			moveCursorDown();
+		}
 	}
 	
 	/**
@@ -244,24 +252,24 @@ public class Text {
 		return length;
 	}
 	
-	public static void main(String args[]){
-		Text myText = new Text();
-		
-		myText.addLine("Test");
-		myText.addLine("Test2");
-		myText.addLine("Test3");
-		myText.addLine("Test4");
-		
-		String text = myText.getWholeText();
-		System.out.println(text);
-		
-		myText.moveCursorDown();
-		myText.moveCursorDown();
-		
-		System.out.println(myText.getLineAtCursor());
-		System.out.println(myText.getLineLengthAtCursor());
-		System.out.println(myText.getWholeTextLength());
-	}
+//	public static void main(String args[]){
+//		Text myText = new Text();
+//		
+//		myText.addLine("Test");
+//		myText.addLine("Test2");
+//		myText.addLine("Test3");
+//		myText.addLine("Test4");
+//		
+//		String text = myText.getWholeText();
+//		System.out.println(text);
+//		
+//		myText.moveCursorDown();
+//		myText.moveCursorDown();
+//		
+//		System.out.println(myText.getLineAtCursor());
+//		System.out.println(myText.getLineLengthAtCursor());
+//		System.out.println(myText.getWholeTextLength());
+//	}
 }
 
 class LinkListElement {
