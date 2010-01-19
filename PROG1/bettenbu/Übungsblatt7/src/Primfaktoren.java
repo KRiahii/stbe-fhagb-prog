@@ -5,7 +5,6 @@ public class Primfaktoren {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// int[] primzahlen = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
 		int[][] ergebnis = new int[30][2];
 		// zu zerlegende Zahl
 		int zahl = 51717271;
