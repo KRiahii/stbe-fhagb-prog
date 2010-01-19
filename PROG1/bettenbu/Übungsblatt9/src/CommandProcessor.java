@@ -13,25 +13,26 @@ public class CommandProcessor {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub		
 		process();
+		
 
 	}
-	public static void process() throws IOException, InterruptedException{
+
+	public static void process() throws IOException, InterruptedException {
 		Text consoleText = new Text();
-		while (true){
-			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			 String read = reader.readLine();
-			 //StringBuffer buffer = new StringBuffer(read);
-			 String command, param;
-			 int spaceIndex = read.indexOf(" ");
-			 if (spaceIndex != -1){
-				 command = read.substring(0, spaceIndex);
-				 param = read.substring(spaceIndex+1);				 
-			 }
-			 else{
-				 command = read;
-				 param = "";				 
-			 }
+		while (true) {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					System.in));
+			String read = reader.readLine();
+			// StringBuffer buffer = new StringBuffer(read);
+			String command, param;
+			int spaceIndex = read.indexOf(" ");
+			if (spaceIndex != -1) {
+				command = read.substring(0, spaceIndex);
+				param = read.substring(spaceIndex + 1);
+			} else {
+				command = read;
+				param = "";
+			}
 							 
 			 
 			 if (command.equals("q")){				 
