@@ -78,16 +78,16 @@ public class Text {
 	
 	
 	// Rückgabe des gesamten Textes als String (bei größeren Texten evtl. beschränken auf eine bestimmte Zeilenzahl). 
-	public String getWholeText(){
+	public String getWholeText() {
 		StringBuffer wholeText = new StringBuffer();
 		Line templine = firstline.nextline;
-		while (templine.nextline != null){
-		wholeText.append(templine.getLineText() + '\n');
-		templine = templine.nextline;		
+		while (templine.nextline != null) {
+			wholeText.append(templine.getLineText() + '\n');
+			templine = templine.nextline;
 		}
-		return wholeText.toString();		
+		return wholeText.toString();
 	}
-	
+
 	//Rückgabe der Zeile unter dem Cursor als String
 	public String getLineAtCursorPosition(){
 		return cursor.yPos.getLineText();		
