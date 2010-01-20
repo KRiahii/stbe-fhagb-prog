@@ -7,7 +7,7 @@ public class Primfaktoren {
 		// TODO Auto-generated method stub
 		int[][] ergebnis = new int[30][2];
 		// zu zerlegende Zahl
-		int zahl = 51717271;
+		int zahl = 111111;
 		//Zaehler für Häufigkeit der Teilbarkeit = Exponent => z.b. 8 = 2^3
 		int zaehler = 0;
 		//zaehler für feldindex vom Ergebnis Array
@@ -21,7 +21,7 @@ public class Primfaktoren {
 					teilbar = true;
 					zahl = zahl / i;
 				}
-				//wenn durch aktuelle primzahl teilbar dann schreibe ins ergebnis array
+				//wenn durch aktuelle primzahl teilbar dann schreibe ins ergebnis-array
 				if (teilbar) {
 					//Schreibe in die erste Spalte den aktuellen Primfaktor
 					ergebnis[feldindex][0] = i;
@@ -38,7 +38,7 @@ public class Primfaktoren {
 			if (ergebnis[k][0] == 0)
 				break;
 			System.out.print(ergebnis[k][0]);
-			System.out.print("(" + ergebnis[k][1] + ")*");
+			System.out.print("(" + ergebnis[k][1] + ") * ");
 		}
 	}
 
